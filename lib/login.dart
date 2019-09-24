@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newapp/globalvar.dart' as globalvar;
 
 class LoginPage extends StatefulWidget {
   @override
@@ -12,7 +13,7 @@ class _LoginState extends State<LoginPage> {
   final _formKey = new GlobalKey<FormState>();
   FormMode _formMode = FormMode.LOGIN;
   bool _isLoading = false;
-
+  
   @override
   Widget build(BuildContext context){
     
@@ -126,7 +127,7 @@ Future<void> _ackAlert(BuildContext context) {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text('Not in stock'),
+        title: Text(globalvar.uriUrl),
         content: const Text('This item is no longer available'),
         actions: <Widget>[
           FlatButton(
